@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tableau d'éléments</title>
+        
+        <!-- STYLE -->
+        <link rel="stylesheet" href="../css/table.css">
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css"> DataTable -->
+    </head>
+    <body>
+        <div class="container">
+            <div id="table">
+                <!-- Les actions externes au tableau | Import, Export et Add -->
+                <div class="external-actions">
+                    <div class="tabs">
+                        <a href="" class="lien"><i class="fas fa-plus-circle"></i> Ajouter</a>
+                        <div class="import-export">
+                            <button class="btn btn-action" data-table="import"><i class="fas fa-download"></i>Importer</button>
+                            <button class="btn btn-action" data-table="export"><i class="fas fa-upload"></i>Exporter</button>
+                        </div>
+                    </div>
+                    <div class="tabs-content">
+                        <div class="tab-content" id="import">
+                            <form action="" class="form datatable-import-form">
+                                <div>
+                                    <input type="file">
+                                </div>
+
+                                <button class="btn btn-form">OK</button>
+                            </form>
+                        </div>
+                        <div class="tab-content" id="export">
+                            <form action="" class="form datatable-export-form">
+                                <div class="selects">
+                                    <div class="select">
+                                        <input type="checkbox" name="tout" id="tout">
+                                        <label for="tout">Tout sélectionner</label>
+                                    </div>
+                                    <div class="select">
+                                        <input type="checkbox" name="nom" id="nom">
+                                        <label for="nom">Nom</label>
+                                    </div>
+                                    <div class="select">
+                                        <input type="checkbox" name="prenom" id="prenom">
+                                        <label for="prenom">Prénom-s</label>
+                                    </div>
+                                    <div class="select">
+                                        <input type="checkbox" name="birthday" id="birthday">
+                                        <label for="birthday">Date de naissance</label>
+                                    </div>
+                                    <div class="select">
+                                        <input type="checkbox" name="hectare" id="hectare">
+                                        <label for="hectare">Nombre d'hectares (ha)</label>
+                                    </div>
+                                    <div class="select">
+                                        <input type="checkbox" name="date-ajout" id="date-ajout">
+                                        <label for="date-ajout">Date d'ajout</label>
+                                    </div>
+                                    <div class="select">
+                                        <input type="checkbox" name="statut" id="statut">
+                                        <label for="statut">Statut</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-action">
+                                    <button type="submit" class="btn btn-form">OK</button>
+                                    <button type="reset" class="btn btn-form">Annuler</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tableau des données -->
+                <div class="datatable">
+                    <table id="datatable" class="display">
+                        <thead>
+                            <tr>
+                                <th colspan="1" rowspan="1" class="order">Nom</th>
+                                <th colspan="1" rowspan="1">Prénom-s</th>
+                                <th colspan="1" rowspan="1" class="order">Date de naissance</th>
+                                <th colspan="1" rowspan="1" class="order">Nombre d'hectares (ha)</th>
+                                <th colspan="1" rowspan="1" class="order">Date d'ajout</th>
+                                <th colspan="1" rowspan="1" class="order">Statut</th>
+                                <th colspan="1" rowspan="1">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Konan</td>
+                                <td>Konan Jean-Luc</td>
+                                <td>06.05.1998</td>
+                                <td>153</td>
+                                <td>11.10.2020</td>
+                                <td>Président</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Konan</td>
+                                <td>Kouadio Ange Martial</td>
+                                <td>06.05.1998</td>
+                                <td>150</td>
+                                <td>11.10.2020</td>
+                                <td>Conseilé</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Konan</td>
+                                <td>Koffi Franck Arnaud</td>
+                                <td>06.05.1998</td>
+                                <td>150</td>
+                                <td>11.10.2020</td>
+                                <td>Trésorier</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Glénéblé</td>
+                                <td>Joël</td>
+                                <td>17.03.1995</td>
+                                <td>21</td>
+                                <td>14.12.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Camara</td>
+                                <td>Lacina</td>
+                                <td>03.02.1987</td>
+                                <td>50</td>
+                                <td>26.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sanogo</td>
+                                <td>Ali</td>
+                                <td>26.12.1996</td>
+                                <td>48</td>
+                                <td>17.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sama</td>
+                                <td>Julien</td>
+                                <td>30.01.1975</td>
+                                <td>140</td>
+                                <td>19.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Oulaï</td>
+                                <td>Stephane</td>
+                                <td>19.12.1965</td>
+                                <td>150</td>
+                                <td>16.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Oura</td>
+                                <td>Kouamé Rodolphe</td>
+                                <td>13.09.1968</td>
+                                <td>77</td>
+                                <td>19.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Siéné</td>
+                                <td>Grégoire</td>
+                                <td>01.01.1962</td>
+                                <td>150</td>
+                                <td>12.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Gonty</td>
+                                <td>Herman</td>
+                                <td>26.12.1969</td>
+                                <td>46</td>
+                                <td>15.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lolo</td>
+                                <td>Bernard</td>
+                                <td>23.09.1966</td>
+                                <td>150</td>
+                                <td>11.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lamagnigui</td>
+                                <td>Issouf</td>
+                                <td>25.07.1965</td>
+                                <td>36</td>
+                                <td>21.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Danho</td>
+                                <td>Le Grand</td>
+                                <td>16.07.1980</td>
+                                <td>18</td>
+                                <td>11.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Koalemda</td>
+                                <td>Pascal</td>
+                                <td>22.12.1972</td>
+                                <td>21</td>
+                                <td>11.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Yéo</td>
+                                <td>Ousmane</td>
+                                <td>06.05.1968</td>
+                                <td>20</td>
+                                <td>06.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Malundu</td>
+                                <td>Aristide</td>
+                                <td>28.08.1986</td>
+                                <td>150</td>
+                                <td>03.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Yémi</td>
+                                <td>Aladé</td>
+                                <td>14.10.1983</td>
+                                <td>59</td>
+                                <td>03.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kam</td>
+                                <td>Bandé</td>
+                                <td>29.11.1977</td>
+                                <td>18</td>
+                                <td>29.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cissé</td>
+                                <td>Pierre</td>
+                                <td>23.03.1974</td>
+                                <td>114</td>
+                                <td>25.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Aka</td>
+                                <td>François</td>
+                                <td>13.03.1998</td>
+                                <td>25</td>
+                                <td>13.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ouattara</td>
+                                <td>Zoumana</td>
+                                <td>28.12.1989</td>
+                                <td>50</td>
+                                <td>27.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Assoi</td>
+                                <td>Arnaud</td>
+                                <td>09.09.1994</td>
+                                <td>13</td>
+                                <td>19.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ambeu</td>
+                                <td>Alain</td>
+                                <td>22.03.1994</td>
+                                <td>7</td>
+                                <td>07.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Assi</td>
+                                <td>George</td>
+                                <td>23.06.1990</td>
+                                <td>24</td>
+                                <td>12.09.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Makpalé</td>
+                                <td>Giles Trésor</td>
+                                <td>21.07.1998</td>
+                                <td>150</td>
+                                <td>11.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bamba</td>
+                                <td>Lamine</td>
+                                <td>23.08.1995</td>
+                                <td>33</td>
+                                <td>09.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sana</td>
+                                <td>Ibrahima</td>
+                                <td>01.07.1990</td>
+                                <td>122</td>
+                                <td>15.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Touré</td>
+                                <td>Lamagnigui</td>
+                                <td>22.12.1996</td>
+                                <td>150</td>
+                                <td>13.11.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Affoun</td>
+                                <td>Alexandre</td>
+                                <td>10.01.1988</td>
+                                <td>150</td>
+                                <td>10.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Yobouet</td>
+                                <td>Christ Emmanuel</td>
+                                <td>31.08.1990</td>
+                                <td>2</td>
+                                <td>11.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Coulibaly</td>
+                                <td>Ali</td>
+                                <td>27.08.1994</td>
+                                <td>4</td>
+                                <td>09.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Koné</td>
+                                <td>Moussa</td>
+                                <td>30.02.1983</td>
+                                <td>17</td>
+                                <td>15.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Assé</td>
+                                <td>Boris Adelin</td>
+                                <td>16.08.1998</td>
+                                <td>90</td>
+                                <td>15.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Zobré</td>
+                                <td>Armel</td>
+                                <td>14.03.1990</td>
+                                <td>10</td>
+                                <td>14.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Babo</td>
+                                <td>Alain</td>
+                                <td>26.07.1988</td>
+                                <td>50</td>
+                                <td>13.10.2020</td>
+                                <td>Producteur</td>
+                                <td>
+                                    <span title="voir"><i class="far fa-eye"></i></span>
+                                    <span title="supprimer"><i class="far fa-trash-alt"></i></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- JQuery -->
+        <script src="https://kit.fontawesome.com/d3eb5df1d1.js" crossorigin="anonymous"></script> <!-- FontAwesome -->
+        <script src="../scripts/datatables.js"></script>
+        <script src="../scripts/table.js"></script>
+    </body>
+</html>

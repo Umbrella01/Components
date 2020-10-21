@@ -1,0 +1,331 @@
+
+/*************
+    FONT
+*************/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
+
+/*************
+    GENERAL
+************/
+body {
+    background-color: rgb(237, 241, 243);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(84, 88, 90);
+}
+
+a, a:focus, a:hover {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    padding: 30px;
+}
+
+#table {
+    background-color: white;
+    padding: 15px;
+    position: relative;
+}
+
+#table .external-actions {
+    margin-bottom: 15px;
+}
+
+.external-actions .tabs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.external-actions .tab-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms;
+}
+
+.external-actions .form {
+    /* border: 1px solid black; */
+    padding: 15px;
+    max-width: 600px;
+    margin: 0 0 0 auto;
+    background-color: rgb(237, 241, 243);
+}
+
+.external-actions .form > div {
+    margin-bottom: 25px;
+}
+
+.external-actions .form .selects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    grid-gap: 10px;
+}
+
+.form .selects .select {
+    display: flex;
+    align-items: center;
+}
+
+.form .selects .select input {
+    margin-right: 5px;
+}
+
+.external-actions .form .form-action {
+    margin-bottom: 0px;
+}
+
+.lien {
+    background-color: #f9375e;
+    padding: 9px 20px;
+    border-radius: 2px;
+    color: white;
+    display: flex;
+    align-items: center;
+    opacity: .8;
+    transition: opacity 150ms;
+}
+
+.lien:hover {
+    opacity: 1;
+}
+
+.lien i {
+    font-size: 12px;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn {
+    padding: 9px 10px;
+    border: none;
+    outline: none;
+    background-color: #D4DEEB;
+    margin-right: 3px;
+    border-radius: 2px;
+    cursor: pointer;
+    opacity: .8;
+    transition: opacity 150ms;
+}
+
+.btn i {
+    margin-right: 5px;
+    font-size: 10px;
+}
+
+.btn:hover,
+.btn.active {
+    opacity: 1;
+}
+
+.datatable {
+    overflow-x: auto;
+}
+
+#datatable_wrapper {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+#datatable_length,
+#datatable_filter {
+    margin-bottom: 15px;
+    position: absolute;
+}
+
+#datatable_length {
+    left: 15px;
+    margin-right: 10px;
+    transform: translateY(-150%);
+}
+
+#datatable_length  select {
+    border: 1px solid rgb(237, 241, 243);
+    outline: none;
+}
+
+#datatable_filter {
+    right: 15px;
+    transform: translateY(-125%);
+}
+
+#datatable_filter input {
+    border: 1px solid rgb(237, 241, 243);
+    background: white;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+    font-size: 15px;
+}
+
+#datatable_filter input:focus {
+    box-shadow: 0px 0px 6px rgb(237, 241, 243);
+}
+
+.datatable table.display {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.datatable table td {
+    font-size: 16px;
+    padding: 15px 20px;
+}
+
+table, tr, th, td {
+    border: 1px solid rgb(237, 241, 243);
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+}
+
+.datatable table thead {
+    background-color: rgb(237, 241, 243);
+}
+
+.datatable table thead th {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 20px;
+    min-width: 180px;
+    text-align: left;
+    outline: none;
+    position: relative;
+    pointer-events: none;
+}
+
+.datatable table thead th.order {
+    pointer-events: visible;
+    cursor: pointer;
+}
+
+.datatable table thead th.order::before {
+    content: "";
+    border-bottom: 5px solid rgba(84, 88, 90, 0.5);
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-top: 3px solid transparent;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-100%);
+}
+
+.datatable table thead th.order.sorting_asc::before {
+    border-bottom-color: rgb(84, 88, 90);
+}
+
+.datatable table thead th.order::after {
+    content: "";
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-top: 5px solid rgba(84, 88, 90, 0.5);
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(25%);
+}
+
+.datatable table thead th.order.sorting_desc::after {
+    border-top-color: rgb(84, 88, 90);
+}
+
+.datatable table thead th:last-child {
+    min-width: 80px;
+    max-width: 100px;
+}
+
+table tbody tr td:last-child {
+    text-align: center;
+}
+
+table tbody tr td:last-child span {
+    margin: 0 3px;
+    cursor: pointer;
+    opacity: .6;
+    transition: opacity 150ms;
+}
+
+table tbody tr td:last-child span i {
+    font-size: 16px;
+}
+
+table tbody tr td:last-child span:hover {
+    opacity: 1;
+}
+
+#datatable_info,
+#datatable_paginate {
+    position: absolute;
+}
+
+#datatable_info {
+    left: 15px;
+}
+
+#datatable_paginate {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+    right: 15px;
+    bottom: 50px;
+}
+
+#datatable_paginate > span {
+    margin: 0 10px;
+}
+
+.paginate_button {
+    background-color: rgb(237, 241, 243);
+    padding: 8px 12px;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.paginate_button.current {
+    background-color: #D4DEEB;
+}
+
+.paginate_button.previous {
+    padding-left: 20px;
+}
+
+.paginate_button.next {
+    padding-right: 20px;
+}
+
+.paginate_button.previous::before,
+.paginate_button.next::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 22px;
+    position: absolute;
+    top: 0;
+    transform: translateY(25%);
+    color: rgba(84, 88, 90, 0.5);
+}
+
+.paginate_button.next::before {
+    content: "\f0da";
+    right: 8px;
+}
+
+.paginate_button.previous::before {
+    content: "\f0d9";
+    left: 8px;
+}

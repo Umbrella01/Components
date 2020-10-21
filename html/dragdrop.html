@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drag and Drop files</title>
+        <link rel="stylesheet" href="../css/dragdrop.css">
+    </head>
+    <body>
+        <div class="upload">
+            <div class="upload-files">
+                <form action="" class="upload-form">
+                    <div class="body" id="drop">
+                        <i class="far fa-file-alt pointer-none" aria-hidden="true"></i>
+                        <p class="pointer-none"><b>Glisser et déposer</b> des fichiers ici <br> ou <a href="" id="triggerFile">sélectionner</a> depuis votre gestionnaire</p>
+                        <input type="file" name="file" accept="image/*, .pdf, .docx" multiple="multiple">
+                    </div>
+                    <div class="footer">
+                        <div class="divider">
+                            <span><AR>FICHIERS</AR></span>
+                        </div>
+                        <div class="list-files">
+                            <!-- Template -->
+                        </div>
+                        <div class="actions">
+                            <button type="reset" class="cancel">Annuler</button>
+                            <button type="submit" class="import">Importer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="https://kit.fontawesome.com/d3eb5df1d1.js" crossorigin="anonymous"></script> <!-- FontAwesome -->
+        <script src="../scripts/dragdrop.js"></script>
+    </body>
+</html>
